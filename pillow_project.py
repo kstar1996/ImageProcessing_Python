@@ -34,6 +34,7 @@ pil_trim.save('pil_trim.jpg')
         #print(im[i, j])
 # result is (R, G, B)
 
+# Interpolation filters are included in PIL itself.
 
 
 

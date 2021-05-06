@@ -33,7 +33,6 @@ def mosaic(im1, im2):
         im_mosa = np.concatenate((im1, im2), axis=1)
         return im_mosa
 
-
 def gamma_correction_brighter(im):
     im_1_22 = 255.0 * (im / 255.0) ** (1 / 2.2)
     return np.uint8(im_1_22)

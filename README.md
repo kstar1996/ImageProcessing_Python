@@ -5,3 +5,4 @@ Various image processing performed using NumPy functions. Uses Pillow to read an
 ```
 pip install -r requirements.txt
 ```
+

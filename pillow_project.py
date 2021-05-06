@@ -4,8 +4,14 @@ import os, glob
 from functions import *
 
 # read an image file as ndarray
-im1 = np.array(Image.open('sunflower.jpg'))
+input_image = input("Input the full image file name including the extension.\n")
+im1 = np.array(Image.open(input_image))
 im2 = np.array(Image.open('cat.jpg'))
+
+
+# input_preprocess = input("Input the number of the preprocessing method you want to use.\n0: invert pixels\n1: color
+# reduction\n2: mosaic\n3: gamma correction-brighter\n4: gamma correction-darker\n5: crop image\n")
+
 
 pil_invert = Image.fromarray(invert_pixel(im1))
 pil_invert.save('pil_inverse.jpg')

@@ -7,5 +7,4 @@ def invert_pixel(im):
 
     pil_invert = Image.fromarray(im_i)
     pil_invert.save('pil_invert.jpg')
-    #return im_i
 

@@ -1,4 +1,5 @@
 from PIL import Image
+import numpy as np
 import requests
 
 
@@ -8,4 +9,6 @@ def trimming(im, h1, h2, w1, w2):
 
     im_trim = im[h1:h2, w1:w2]
 
-    return im_trim
+    pil_trim = Image.fromarray(im_trim)
+    print(pil_trim.what)
+    pil_trim.save('pil_trim.jpg')

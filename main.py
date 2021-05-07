@@ -7,8 +7,8 @@ from augmentation.mod_trimming import *
 
 # read an image file as ndarray
 url1 = "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg"
-url2 = "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg"
 im1 = np.array(Image.open(requests.get(url1, stream=True).raw))
+url2 = "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg"
 im2 = np.array(Image.open(requests.get(url2, stream=True).raw))
 
 

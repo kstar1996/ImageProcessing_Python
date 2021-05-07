@@ -10,5 +10,5 @@ def trimming(im, h1, h2, w1, w2):
     im_trim = im[h1:h2, w1:w2]
 
     pil_trim = Image.fromarray(im_trim)
-    print(pil_trim.what)
+    print(pil_trim)
     pil_trim.save('pil_trim.jpg')

@@ -1,6 +1,5 @@
 import numpy as np
 from PIL import Image
-import requests
 
 
 def mosaic(im1, im2, ext):

@@ -1,5 +1,4 @@
 from PIL import Image
-import requests
 
 
 def invert_pixel(im, ext):

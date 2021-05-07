@@ -1,6 +1,5 @@
 import numpy as np
 from PIL import Image
-import requests
 
 
 def gamma_correction_darker(im, ext):

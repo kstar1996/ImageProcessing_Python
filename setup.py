@@ -7,7 +7,7 @@ setup(
    description='Various image processing performed using NumPy functions. Uses Pillow to read and save image files',
    author='Eujin',
    license='MIT',
-   install_requires=[],
+   install_requires=['numpy', 'requests', 'pillow'],
    setup_requires=['pytest-runner'],
    tests_require=['pytest==4.4.1'],
    test_suite='tests',

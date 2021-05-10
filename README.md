@@ -5,4 +5,8 @@ Various image processing performed using NumPy functions. Uses Pillow to read an
 ```
 pip install -r requirements.txt
 ```
+### How to execute all tests stored in the 'tests' folder
+```
+python setup.py pytest
+```
 

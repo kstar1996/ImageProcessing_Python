@@ -23,7 +23,10 @@ def gamma_correction_brighter(image_pass: str):
     else:
         im = get_ext(image_pass)
 
+    fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
+    filename = fn.split("/")[len(fn.split("/")) - 1]
+
     im_1_22 = 255.0 * (im / 255.0) ** (1 / 2.2)
 
     pil_gamma_b = Image.fromarray(np.uint8(im_1_22))
-    pil_gamma_b.save('pil_gamma_b.jpg')
+    pil_gamma_b.save(filename+'_gamma_b.jpg')

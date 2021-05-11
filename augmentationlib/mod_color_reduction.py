@@ -23,6 +23,9 @@ def color_reduction(image_pass: str):
     else:
         im = get_ext(image_pass)
 
+    fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
+    filename = fn.split("/")[len(fn.split("/")) - 1]
+
     im_128 = im // 128 * 128
     pil_reduction = Image.fromarray(im_128)
-    pil_reduction.save('pil_reduction.jpg')
+    pil_reduction.save(filename+'_reduction.jpg')

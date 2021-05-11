@@ -23,7 +23,10 @@ def invert_pixel(image_pass: str):
     else:
         im = get_ext(image_pass)
 
+    fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
+    filename = fn.split("/")[len(fn.split("/")) - 1]
+
     im_i = 255 - im
 
     pil_invert = Image.fromarray(im_i)
-    pil_invert.save('pil_invert.jpg')
+    pil_invert.save(filename+'_invert.jpg')

@@ -1,5 +1,7 @@
 # ImageProcessing_Python
-Various image processing performed using NumPy functions. Uses Pillow to read and save image files. 
+
+This repository includes various image processing modules performed using NumPy functions. 
+Uses Pillow to read and save image files. 
 
 ### how to install prerequisites
 ```
@@ -10,3 +12,4 @@ pip install -r requirements.txt
 python setup.py pytest
 ```
 
+## Results

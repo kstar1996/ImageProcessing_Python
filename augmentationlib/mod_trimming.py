@@ -31,8 +31,10 @@ def trimming(image_pass: str):
     fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
     filename = fn.split("/")[len(fn.split("/")) - 1]
 
+    # get the height, width or numpy array
     h, w, c = im.shape
 
+    # cropping the image
     im_trim1 = im[0:int(2*h/3), 0:int(2*w/3)]
     im_trim2 = im[0:int(2*h/3), int(w/3):w]
     im_trim3 = im[int(h/3):h, int(w/3):w]

@@ -34,6 +34,7 @@ def mosaic(image_pass1: str, image_pass2: str):
     height1 = im1.shape[0]
     height2 = im2.shape[0]
 
+    # image mosaic: putting two images together
     if height1 > height2:
         im1_slice = im1[:height2, :]
         im_mosa = np.concatenate((im1_slice, im2), axis=1)

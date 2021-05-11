@@ -26,6 +26,8 @@ def gamma_correction_darker(image_pass: str):
     fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
     filename = fn.split("/")[len(fn.split("/")) - 1]
 
+    # gamma darker
     im_22 = 255.0 * (im / 255.0) ** 2.2
+
     pil_gamma_d = Image.fromarray(np.uint8(im_22))
     pil_gamma_d.save(filename+'_gamma_d.jpg')

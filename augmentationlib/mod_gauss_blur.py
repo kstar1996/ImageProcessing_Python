@@ -27,6 +27,8 @@ def blur(image_pass: str):
     fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
     filename = fn.split("/")[len(fn.split("/")) - 1]
 
+    # gaussian blur for 3 dimensional image
     blurred_im = gaussian_filter(im, sigma=(5, 5, 0))
+
     pil_blur = Image.fromarray(blurred_im)
     pil_blur.save(filename+'_blur.jpg')

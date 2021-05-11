@@ -5,7 +5,7 @@ from os.path import splitext
 import numpy as np
 
 
-def get_ext(url: str):
+def get_ext(url: str) -> np:
     parsed = urlparse(url)
     root, ext = splitext(parsed.path)
     if ext == ".png":
@@ -17,7 +17,11 @@ def get_ext(url: str):
 
 
 def trimming(image_pass: str):
-
+    """
+    :params: image_pass
+    Module for cropping the image.
+    Crops into 5 images; each corner and the middle.
+    """
     parsed = (urlparse(image_pass))
     if parsed.scheme is '':
         im = np.array(Image.open(image_pass))

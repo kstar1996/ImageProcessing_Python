@@ -5,7 +5,7 @@ from os.path import splitext
 import numpy as np
 
 
-def get_ext(url: str):
+def get_ext(url: str) -> np:
     parsed = urlparse(url)
     root, ext = splitext(parsed.path)
     if ext == ".png":

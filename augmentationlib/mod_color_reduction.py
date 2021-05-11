@@ -5,7 +5,12 @@ from urllib.parse import urlparse
 from os.path import splitext
 
 
-def get_ext(url: str):
+def get_ext(url: str) -> np:
+    """
+    :params: url
+    Module for checking if image is png or jpeg.
+    If image is png, changes the image to jpeg.
+    """
     parsed = urlparse(url)
     root, ext = splitext(parsed.path)
     if ext == ".png":
@@ -17,6 +22,10 @@ def get_ext(url: str):
 
 
 def color_reduction(image_pass: str):
+    """
+    :params: image_pass
+    Module for reducing color in the image
+    """
     parsed = (urlparse(image_pass))
     if parsed.scheme is '':
         im = np.array(Image.open(image_pass))

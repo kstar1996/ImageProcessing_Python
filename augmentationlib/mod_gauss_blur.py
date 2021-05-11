@@ -6,7 +6,7 @@ from os.path import splitext
 from scipy.ndimage.filters import gaussian_filter
 
 
-def get_ext(url: str):
+def get_ext(url: str) -> np:
     parsed = urlparse(url)
     root, ext = splitext(parsed.path)
     if ext == ".png":

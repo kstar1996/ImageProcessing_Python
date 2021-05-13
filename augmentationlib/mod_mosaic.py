@@ -5,25 +5,44 @@ from os.path import splitext
 import numpy as np
 
 
-def get_ext(url: str) -> np:
+def get_urlext(url: str) -> np:
     parsed = urlparse(url)
     root, ext = splitext(parsed.path)
+    # if image is png, change to jpeg format and save as numpy array.
     if ext == ".png":
         im_png = Image.open(requests.get(url, stream=True).raw)
         im = np.array(im_png.convert("RGB"))
+    # if image is anything else, just save as numpy array.
     else:
         im = np.array(Image.open(requests.get(url, stream=True).raw))
-    return im  # or ext[1:] if you don't want the leading '.'
+    return im
+
+
+def get_filext(file: str) -> np:
+    parsed = urlparse(file)
+    root, ext = splitext(parsed.path)
+    # if image is png, change to jpeg format and save as numpy array.
+    if ext == ".png":
+        im_png = Image.open(file)
+        im = np.array(im_png.convert("RGB"))
+    # if image is anything else, just save as numpy array.
+    else:
+        im = np.array(Image.open(file))
+    return im
 
 
 def mosaic(image_pass1: str, image_pass2: str):
-    parsed = (urlparse(image_pass1))
-    if parsed.scheme is '':
-        im1 = np.array(Image.open(image_pass1))
-        im2 = np.array(Image.open(image_pass2))
+    parsed1 = (urlparse(image_pass1))
+    parsed2 = (urlparse(image_pass2))
+    if parsed1.scheme is '':
+        im1 = get_filext(image_pass1)
     else:
-        im1 = get_ext(image_pass1)
-        im2 = get_ext(image_pass2)
+        im1 = get_urlext(image_pass1)
+
+    if parsed2.scheme is '':
+        im2 = get_filext(image_pass2)
+    else:
+        im2 = get_urlext(image_pass2)
 
     fn = image_pass1.split(".")[len(image_pass1.split(".")) - 2]
     filename1 = fn.split("/")[len(fn.split("/")) - 1]

@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from os.path import splitext
 
 
-def get_ext(url: str) -> np:
+def get_urlext(url: str) -> np:
     parsed = urlparse(url)
     root, ext = splitext(parsed.path)
     if ext == ".png":
@@ -16,12 +16,23 @@ def get_ext(url: str) -> np:
     return im
 
 
+def get_filext(file: str) -> np:
+    parsed = urlparse(file)
+    root, ext = splitext(parsed.path)
+    if ext == ".png":
+        im_png = Image.open(file)
+        im = im_png.convert("RGB")
+    else:
+        im = Image.open(file)
+    return im
+
+
 def rotate(image_pass: str):
     parsed = (urlparse(image_pass))
     if parsed.scheme is '':
-        im = Image.open(image_pass)
+        im = get_filext(image_pass)
     else:
-        im = get_ext(image_pass)
+        im = get_urlext(image_pass)
 
     fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
     filename = fn.split("/")[len(fn.split("/")) - 1]

@@ -5,15 +5,30 @@ from urllib.parse import urlparse
 from os.path import splitext
 
 
-def get_ext(url: str) -> np:
+def get_urlext(url: str) -> np:
     parsed = urlparse(url)
     root, ext = splitext(parsed.path)
     if ext == ".png":
         im_png = Image.open(requests.get(url, stream=True).raw)
-        im_gray = im_png.convert(mode='L')
-        im = np.array(im_gray.convert("RGB"))
+        im_gray = im_png.convert("RGB")
+        im = np.array(im_gray.convert(mode='L'))
     else:
         im_open = Image.open(requests.get(url, stream=True).raw)
+        im = np.array(im_open.convert(mode='L'))
+    return im
+
+
+def get_filext(file: str) -> np:
+    parsed = urlparse(file)
+    root, ext = splitext(parsed.path)
+    # if image is png, change to jpeg format and save as numpy array.
+    if ext == ".png":
+        im_png = Image.open(file)
+        im_gray = im_png.convert("RGB")
+        im = np.array(im_gray.convert(mode='L'))
+    # if image is anything else, just save as numpy array.
+    else:
+        im_open = Image.open(file)
         im = np.array(im_open.convert(mode='L'))
     return im
 
@@ -23,11 +38,9 @@ def histogram_eq(image_pass: str):
 
     parsed = (urlparse(image_pass))
     if parsed.scheme is '':
-        # convert to grayscale
-        im_gray = image_pass.convert(mode='L')
-        im = np.array(Image.open(im_gray))
+        im = get_filext(image_pass)
     else:
-        im = get_ext(image_pass)
+        im = get_urlext(image_pass)
 
     fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
     filename = fn.split("/")[len(fn.split("/")) - 1]
@@ -53,4 +66,4 @@ def histogram_eq(image_pass: str):
     eq_img_array = np.reshape(np.asarray(eq_img_list), im.shape)
 
     pil_histogram = Image.fromarray(eq_img_array, mode='L')
-    pil_histogram.save(filename+'_blur.jpg')
+    pil_histogram.save(filename+'_histogram_eq.jpg')

@@ -37,7 +37,9 @@ def rotate(image_pass: str):
     fn = image_pass.split(".")[len(image_pass.split(".")) - 2]
     filename = fn.split("/")[len(fn.split("/")) - 1]
 
-    # rotate by 45 degrees
-    rotated_im = im.rotate(45)
+    # rotate
+    rotated_im45 = im.rotate(45)
+    rotated_im135 = im.rotate(135)
 
-    rotated_im.save(filename+'_rotate45.jpg')
+    rotated_im45.save(filename+'_rotate45.jpg')
+    rotated_im135.save(filename + '_rotate135.jpg')

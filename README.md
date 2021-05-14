@@ -13,3 +13,6 @@ python setup.py pytest
 ```
 
 ## Results
+#### Example 1: Quokka
+<img src="../tests/images/quokka.jpg" width="200" height="300">
+

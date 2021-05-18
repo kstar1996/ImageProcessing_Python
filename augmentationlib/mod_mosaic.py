@@ -57,7 +57,6 @@ def mosaic(image_pass1: str, image_pass2: str):
     if height1 > height2:
         im1_slice = im1[:height2, :]
         im_mosa = np.concatenate((im1_slice, im2), axis=1)
-
         pil_mosaic = Image.fromarray(im_mosa)
         pil_mosaic.save(filename1+filename2+'_mosaic.jpg')
     elif height1 < height2:

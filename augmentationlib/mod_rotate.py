@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from os.path import splitext
 
 
-def get_urlext(url: str) -> np:
+def get_urlext(url: str):
     parsed = urlparse(url)
     root, ext = splitext(parsed.path)
     if ext == ".png":
@@ -16,7 +16,7 @@ def get_urlext(url: str) -> np:
     return im
 
 
-def get_filext(file: str) -> np:
+def get_filext(file: str):
     parsed = urlparse(file)
     root, ext = splitext(parsed.path)
     if ext == ".png":

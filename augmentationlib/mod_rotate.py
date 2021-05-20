@@ -1,5 +1,4 @@
 from PIL import Image
-import numpy as np
 import requests
 from urllib.parse import urlparse
 from os.path import splitext

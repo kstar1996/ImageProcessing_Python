@@ -13,7 +13,6 @@ python setup.py pytest
 ```
 
 ## Results
-#### Example 1
 <table>
 
 <tr><td colspan="5"><strong>Sunflower</strong></td></tr>
@@ -29,7 +28,7 @@ python setup.py pytest
 <td colspan="1"><img src="https://raw.githubusercontent.com/kstar1996/ImageProcessing_Python/master/tests/result_images/sunflower/Sunflower_from_Silesia2_reduction.jpg" height="100" width="135" alt="Identity"></td>
 <td colspan="1"><img src="https://raw.githubusercontent.com/kstar1996/ImageProcessing_Python/master/tests/result_images/sunflower/Sunflower_from_Silesia2_contrast_stretch.jpg" height="100" width="135" alt="Identity"></td>
 <td colspan="1"><img src="https://raw.githubusercontent.com/kstar1996/ImageProcessing_Python/master/tests/result_images/sunflower/Sunflower_from_Silesia2_gamma_b.jpg" height="100" width="135" alt="Identity"></td>
-<td>&nbsp;</td>
+<td colspan="1"><img src="https://raw.githubusercontent.com/kstar1996/ImageProcessing_Python/master/tests/result_images/sunflower/Sunflower_from_Silesia2_gamma_d.jpg" height="100" width="135" alt="Identity"></td>
 </tr>
 <tr>
 

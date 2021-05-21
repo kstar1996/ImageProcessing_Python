@@ -15,7 +15,7 @@ python setup.py pytest
 ## Results
 <table>
 
-<tr><td colspan="5"><strong>Sunflower</strong></td></tr>
+<tr><td colspan="5"><strong>Example1: Sunflower</strong></td></tr>
 <tr>
 <td colspan="1"><sub><a>Original</a></sub></td>
 <td colspan="1"><sub><a>Color Reduction</a></sub></td>

@@ -25,8 +25,8 @@ python setup.py pytest
 <td colspan="1"><sub><a>Gamma Correction Darker</a></sub></td>
 </tr>
 <tr>
-<td colspan="1"><img src="https://raw.githubusercontent.com/kstar1996/ImageProcessing_Python/master/tests/images/quokka.jpg" height="148" width="100" alt="Identity"></td>
-<td>&nbsp;</td>
+<td colspan="1"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg" height="100" width="135" alt="Identity"></td>
+<td colspan="1"><img src="https://raw.githubusercontent.com/kstar1996/ImageProcessing_Python/master/tests/result_images/sunflower/Sunflower_from_Silesia2_reduction.jpg" height="100" width="135" alt="Identity"></td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>

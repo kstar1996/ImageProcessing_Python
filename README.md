@@ -14,7 +14,6 @@ python setup.py pytest
 
 ## Results
 <table>
-
 <tr><td colspan="5"><strong>Example1: Sunflower</strong></td></tr>
 <tr>
 <td colspan="1"><sub><a>Original</a></sub></td>
@@ -31,6 +30,5 @@ python setup.py pytest
 <td colspan="1"><img src="https://raw.githubusercontent.com/kstar1996/ImageProcessing_Python/master/tests/result_images/sunflower/Sunflower_from_Silesia2_gamma_d.jpg" height="100" width="135" alt="Identity"></td>
 </tr>
 <tr>
-
 </table>
 
